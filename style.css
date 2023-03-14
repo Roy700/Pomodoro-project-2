@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #1E213F;
+    height: 100%;
+    /* font-size: 1.6rem;
+    font-family: 'Open sans', sans-serif; */
+}
+
+h1{
+    color:#D7E0FF;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 48px;
+}
+
+.container {
+    /* width: min(42.5rem, 100%); */
+    /* margin-inline: auto;
+    padding-inline: 2rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pill-panel {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: #161932;
+    text-align: center;
+    align-items: center;
+    /* width: 20rem; */
+    width: 373px;
+    height: 63px;
+    margin-block: 47px;
+    padding: 1rem;
+    border-radius: 10rem;
+}
+
+.pill-panel p{
+    cursor: pointer;
+    color: #D7E0FF;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+    z-index: 2;
+    transition: all 300ms ease-in-out;
+}
+
+.pill-panel p.active {
+    opacity: 1;
+    color: #1E213F;
+}
+
+.pill-panel .indicator{
+    position: absolute;
+    background: #F87070;
+    width: calc(33% - 1px);
+    height: 48px;
+    left: 2%;
+    border-radius: 26.5px;
+    transition: all 300ms ease-in-out;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 410px;
+    height: 410px;
+    border-radius: 50%;
+    background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
+    box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
+    /* -webkit-box-shadow: 0px 0px 15px 10px hsl(235, 36%, 35%); 
+    box-shadow: 0px 0px 15px 10px hsl(235, 36%, 35%); */
+}
+
+.timer .inner-timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 366px;
+    height: 366px;
+    border-radius: 50%;
+    background: #161932;
+}
+
+.clock-circle{
+    position: relative;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    background: red;
+}
+
+.progress-ring{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-ring-circle{
+    transition: 0.5s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke: #F87070;
+}

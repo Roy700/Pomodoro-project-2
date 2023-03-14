@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>pomodoro</h1>
+        <div class="pill-panel">
+            <p class="active" id="pomodoro">pomodoro</p>
+            <p id="short-break">short break</p>
+            <p id="long-break">long break</p>
+            <div class="indicator"></div>
+        </div>
+        
+        <div class="timer">
+            <div class="inner-timer">
+                <div class="clock-circle">
+                    <div class="time">
+                        <p id="minutes"></p>
+                        <p>:</p>
+                        <p id="seconds"></p>
+                    </div>
+                    <a id="control" href="#">restart</a>
+                    <svg class="progress-ring" height="339" width="339">
+                        <circle
+                            class="progress-ring-circle"
+                            stroke-width="13.5"
+                            fill="transparent"
+                            r="160"
+                            cx="170"
+                            cy="170"
+                        />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="setting">
+            <a href="#" class="settings-icon"><img src="assets/icon-settings.svg" alt=""></a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
