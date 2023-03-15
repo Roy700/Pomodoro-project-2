@@ -25,7 +25,9 @@
                         <p>:</p>
                         <p id="seconds"></p>
                     </div>
-                    <a id="control" href="#">restart</a>
+                    <a href="#" class="control" id="control1">start</a>
+                    <a href="#" class="control" id="control2">pause</a>
+                    <a href="#" class="control" id="control3">restart</a>
                     <svg class="progress-ring" height="339" width="339">
                         <circle
                             class="progress-ring-circle"
@@ -43,6 +45,13 @@
         <div class="setting">
             <a href="#" class="settings-icon"><img src="assets/icon-settings.svg" alt=""></a>
         </div>
+
+        <form action=".">
+            <input type="number" value="1" id="focusTime" />
+            <input type="number" value="1" id="shortBreakTime" />
+            <input type="number" value="1" id="longBreakTime" />
+            <button type="submit">Save settings</button>
+        </form>
     </div>
 
     <script src="main.js"></script>

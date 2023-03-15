@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
@@ -28,6 +28,7 @@ h1{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
 
 .pill-panel {
@@ -99,7 +100,6 @@ h1{
     justify-content: center;
     align-items: center;
     height: 30%;
-    background: red;
 }
 
 .progress-ring{
@@ -114,4 +114,44 @@ h1{
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
     stroke: #F87070;
+}
+
+.time {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.time p {
+    font-size: 100px;
+    line-height: 132px;
+    text-align: center;
+    color: #D7E0FF;
+}
+
+.control{
+    position: absolute;
+    top:calc(50% - 21px/2 + 84.5px);
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 15px;
+    text-decoration: none;
+    color: #D7E0FF;
+    cursor: pointer;
+    z-index: 3;   /*temporary fix for ponter not working*/
+}
+
+#control2{
+    display: none;
+}
+
+#control3{
+    display: none;
+}
+
+.setting{
+    margin-top: 63px;
+    margin-bottom: 56px;
 }
