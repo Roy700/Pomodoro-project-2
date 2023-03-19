@@ -31,6 +31,140 @@ h1{
     position: relative;
 }
 
+
+
+/* FORM POP UP */
+
+
+
+.form-container{
+    position: absolute;
+    z-index: 4;
+    /* margin: 0 auto; */
+    background: #FFFFFF;
+    border-radius: 25px;
+    width: 540px;
+    height: 484px;
+    display:none;
+    /* width: 33.75rem;
+    height: 29rem; */
+    
+}
+
+.heading{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 34px 40px 31px;
+    border-bottom: 1px solid #E3E1E1;
+    gap: 330px;
+}
+
+.container-wrapper{
+    margin:auto 40px;
+    box-sizing: border-box;
+}
+
+.time-section{
+    border-bottom: 1px solid #E3E1E1;
+    padding: 24px 0;
+}
+
+.time-input{
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 140px;
+    height: 70px;
+}
+
+.input-box label{
+    /* width: 95%; */
+    margin: 0;
+}
+
+.input-box input{
+    height: 48px;
+    width: 140px;
+    background: #EFF1FA;
+    margin-top: 8px;
+    border-radius: 10px;
+    border:0px solid #EFF1FA;
+    outline: none;
+    text-align: center;
+}
+
+.font-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 208px;
+    padding: 35px 0;
+    /* padding: 19px 0; */
+    border-bottom: 1px solid #E3E1E1;
+}
+
+/* .font-selector{
+      
+    position: relative;
+} */
+
+/* .outer{
+    background: green;
+    position:absolute ;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+} */
+
+.font-btn{
+    padding:11px;
+    margin: 11px;
+    background: red;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.color-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 190px;
+    padding: 20px 0;
+}
+
+.color-section h3{
+    align-self: center;
+}
+
+.color-selector button{
+    border: 0px;
+}
+
+.apply-btn{
+    position: relative;
+    left:34.22%;
+    top:8px;
+    width: 140px;
+    height: 53px;
+    background: #F87070;
+    border-radius: 26.5px;
+    cursor: pointer;
+    border: 0px;
+}
+
+
+
+
+
+
+
+
 .pill-panel {
     position: relative;
     display: grid;
@@ -154,4 +288,8 @@ h1{
 .setting{
     margin-top: 63px;
     margin-bottom: 56px;
+}
+
+.settings-icon{
+    /* pointer-events: none; */
 }

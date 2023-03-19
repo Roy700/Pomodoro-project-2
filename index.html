@@ -21,9 +21,9 @@
             <div class="inner-timer">
                 <div class="clock-circle">
                     <div class="time">
-                        <p id="minutes"></p>
+                        <p id="minutes">00</p>
                         <p>:</p>
-                        <p id="seconds"></p>
+                        <p id="seconds">00</p>
                     </div>
                     <a href="#" class="control" id="control1">start</a>
                     <a href="#" class="control" id="control2">pause</a>
@@ -46,12 +46,57 @@
             <a href="#" class="settings-icon"><img src="assets/icon-settings.svg" alt=""></a>
         </div>
 
-        <form action=".">
-            <input type="number" value="1" id="focusTime" />
-            <input type="number" value="1" id="shortBreakTime" />
-            <input type="number" value="1" id="longBreakTime" />
-            <button type="submit">Save settings</button>
-        </form>
+        <div class="form-container">
+            <form action=".">
+                <div class="heading">
+                    <h2>SETTINGS</h2>
+                    <a href="#" class="close-btn"><img src="assets/icon-close.svg"></a>
+                </div>
+                <div class="container-wrapper">
+                    <div class="time-section">
+                        <h3>TIME (MINUTES)</h3>
+                        <div class="time-input">
+                            <div class="input-box">
+                                <label for="focusTime">pomodoro</label>
+                                <input type="number" value="1" id="focusTime" />
+                            </div>
+                            <div class="input-box">
+                                <label for="shortBreakTime">short break</label>
+                                <input type="number" value="1" id="shortBreakTime" />
+                            </div>
+                            <div class="input-box">
+                                <label for="longBreakTime">long break</label>
+                                <input type="number" value="1" id="longBreakTime" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="font-section">
+                        <h3>FONT</h3>
+                        <div class="font-selector">
+                            <a href="#" class="font-btn font-selector1">Aa</a>
+                            <a href="#" class="font-btn font-selector2">Aa</a>
+                            <a href="#" class="font-btn font-selector3">Aa</a>
+                        </div>
+                    </div>
+                    <div class="color-section">
+                        <h3>COLOR</h3>
+                        <div class="color-selector">
+                            <button type="button" class="font-btn color-selector" ></button>
+                            <button type="button" class="font-btn color-selector" ></button>
+                            <button type="button" class="font-btn color-selector" ></button>
+                            <!-- <a href="#" class="font-btn color-selector1"></a>
+                            <a href="#" class="font-btn color-selector2"></a>
+                            <a href="#" class="font-btn color-selector3"></a> -->
+                        </div>
+                    </div>
+                    <button type="submit" class="apply-btn">Apply</button>
+                </div>
+            </form>
+        </div>
+        <!-- <input type="number" value="1" id="focusTime" />
+                <input type="number" value="1" id="shortBreakTime" />
+                <input type="number" value="1" id="longBreakTime" />
+                <button type="submit">Save settings</button> -->
     </div>
 
     <script src="main.js"></script>

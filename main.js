@@ -58,6 +58,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
     localStorage.setItem("focusTime", focusTimeInput.value);
     localStorage.setItem("shortBreakTime", shortBreakTimeInput.value);
     localStorage.setItem("longBreakTime", longBreakTimeInput.value);
+    document.querySelector(".form-container").style.display= "none";
 });
 
 document.querySelector("#control3").addEventListener("click", () => {
@@ -134,3 +135,7 @@ startBtn.addEventListener("click", () => {
     //   }
     }
   }
+
+  document.querySelector(".settings-icon").addEventListener("click", ()=>{
+    document.querySelector(".form-container").style.display = "block"
+  })
