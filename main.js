@@ -16,6 +16,8 @@ const secdiv = document.querySelector("#seconds");
 const startBtn = document.querySelector("#control1");
 localStorage.setItem("btn", "focus");
 
+const settingsIcon = document.querySelector(".settings-icon");
+
 
 // PILL NAVIGATION
 for(let i=0; i<pillNodes.length;i++){
@@ -136,6 +138,15 @@ startBtn.addEventListener("click", () => {
     }
   }
 
-  document.querySelector(".settings-icon").addEventListener("click", ()=>{
-    document.querySelector(".form-container").style.display = "block"
+  settingsIcon.addEventListener("click", () => {
+    pill.classList.add(".disabled");
+    settingsIcon.classList.add(".disabled");
+    document.querySelector(".form-container").style.display = "block";
+    
+  })
+
+  document.querySelector(".close-btn").addEventListener("click", ()=>{
+    pill.classList.remove(".disabled");
+    settingsIcon.classList.remove(".disabled");
+    document.querySelector(".form-container").style.display = "none";
   })
