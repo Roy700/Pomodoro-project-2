@@ -10,6 +10,18 @@ const focusTimeInput = document.querySelector("#focusTime");
 const shortBreakTimeInput = document.querySelector("#shortBreakTime");
 const longBreakTimeInput = document.querySelector("#longBreakTime");
 
+let orangeBtn = document.querySelector(".color-selector1");
+let blueBtn = document.querySelector(".color-selector2");
+let purpleBtn = document.querySelector(".color-selector3");
+let font1 = document.querySelector(".font-selector1");
+let font2 = document.querySelector(".font-selector2");
+let font3 = document.querySelector(".font-selector3");
+let fonts = '';
+let color = "";
+let selectedBtn = null;
+let selectedFont = null;
+let root = document.querySelector(":root");
+
 const el = document.querySelector(".clock-circle");
 const mindiv = document.querySelector("#minutes");
 const secdiv = document.querySelector("#seconds");
@@ -24,7 +36,7 @@ for(let i=0; i<pillNodes.length;i++){
     pillNodes[i].addEventListener("click", function(){
         pill.querySelector(".active").classList.remove("active");
         pillNodes[i].classList.add("active");
-        indicator.style.left= `calc(calc(calc(33% - 1px) * ${i}) + 1%)`;
+        indicator.style.left= `calc(calc(calc(33% - 5px) * ${i}) + 2%)`;
     })
     pillNodes[0].addEventListener("click", function(){
         localStorage.setItem("btn", "focus")
@@ -61,6 +73,56 @@ document.querySelector("form").addEventListener("submit", (e) => {
     localStorage.setItem("shortBreakTime", shortBreakTimeInput.value);
     localStorage.setItem("longBreakTime", longBreakTimeInput.value);
     document.querySelector(".form-container").style.display= "none";
+    pill.classList.remove("disable");
+    settingsIcon.classList.remove("disable");
+    root.style.setProperty('--textfont', fonts);
+    root.style.setProperty('--theme', color);
+});
+
+function selectFont(fon) {
+  if (selectedFont) {
+      selectedFont.classList.remove("highlighted");
+  }
+  selectedFont = fon;
+  selectedFont.classList.add("highlighted");
+}
+
+function selectButton(btn) {
+  if (selectedBtn) {
+      selectedBtn.classList.remove("selected");
+  }
+  selectedBtn = btn;
+  selectedBtn.classList.add("selected");
+}
+
+font1.addEventListener("click", () => {
+  fonts = "Kumbh Sans";
+  selectFont(font1);
+});
+
+font2.addEventListener("click", () => {
+  fonts = "Roboto Slab";
+  selectFont(font2);
+});
+
+font3.addEventListener("click", () => {
+  fonts = "Space Mono";
+  selectFont(font3);
+});
+
+orangeBtn.addEventListener("click", () => {
+  color = "#F87070";
+  selectButton(orangeBtn);
+});
+
+blueBtn.addEventListener("click", () => {
+  color = "#70F3F8";
+  selectButton(blueBtn);
+});
+
+purpleBtn.addEventListener("click", () => {
+  color = "#D881F8";
+  selectButton(purpleBtn);
 });
 
 document.querySelector("#control3").addEventListener("click", () => {
@@ -139,14 +201,13 @@ startBtn.addEventListener("click", () => {
   }
 
   settingsIcon.addEventListener("click", () => {
-    pill.classList.add(".disabled");
-    settingsIcon.classList.add(".disabled");
+    pill.classList.add("disable");
+    settingsIcon.classList.add("disable");
     document.querySelector(".form-container").style.display = "block";
-    
   })
 
   document.querySelector(".close-btn").addEventListener("click", ()=>{
-    pill.classList.remove(".disabled");
-    settingsIcon.classList.remove(".disabled");
+    pill.classList.remove("disable");
+    settingsIcon.classList.remove("disable");
     document.querySelector(".form-container").style.display = "none";
   })
