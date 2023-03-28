@@ -352,6 +352,8 @@ h3{
 
 .clock-circle{
     position: relative;
+    display: flex;  /*new*/
+    flex-direction: column;
     padding: 3px;
     display: flex;
     justify-content: center;
@@ -361,6 +363,8 @@ h3{
 
 .progress-ring{
     position: absolute;
+    width: 339px;
+    height: 339px;
     top: 50%;
     left:50%;
     transform: translate(-50%, -50%);
@@ -369,14 +373,15 @@ h3{
 .progress-ring-circle{
     transition: 0.5s;
     transform: rotate(-90deg);
-    transform-origin: 50% 50%;
+    /* transform-origin: 50% 50%; */
+    transform-origin: center;
     stroke: var(--theme);
 }
 
 .time {
     position: relative;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
 }
 
 .time p {
@@ -386,19 +391,25 @@ h3{
     color: #D7E0FF;
 }
 
-.control{
-    position: absolute;
-    top:calc(50% - 21px/2 + 84.5px);
+.status{
+    /* position: absolute; */
+    /* top:calc(50% - 21px/2 + 84.5px); */
     text-transform: uppercase;
     font-weight: 700;
     font-size: 16px;
     line-height: 21px;
     text-align: center;
     letter-spacing: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    justify-self: flex-end; /*not working??*/
+    z-index: 2;   /*temporary fix for ponter not working*/
+}
+
+.control{
     text-decoration: none;
     color: #D7E0FF;
-    cursor: pointer;
-    z-index: 3;   /*temporary fix for ponter not working*/
+    text-align: center;
 }
 
 .control:hover{
@@ -519,12 +530,21 @@ button.selected .checkmark {
         height: 10%;
     }
 
+    .progress-ring{
+        width: 255px; /*reduced my approximately 110 to make 249*/
+        height: 255px;
+        transform: translate(-50%, -50%);
+    }
+
     .progress-ring-circle{
-        transition: 0.5s;
-        transform: rotate(-90deg);
-        transform-origin: 50% 50%;
+        /* transform: rotate(-90deg); */
+        /*
+        stroke-dasharray: 1005;  circumference of the circle (2 * Math.PI * r) 
+        stroke-dashoffset: 502.5;  half of the circumference of the circle    
+        */
+        transform-origin: center;
         stroke-width: 10px;
-        transform: scale(0.76,0.76);
+        /* transform: scale(0.76,0.76); */
     }
     
 
@@ -534,12 +554,11 @@ button.selected .checkmark {
         line-height: 100px;
         text-align: center;
         color: #D7E0FF;
-        letter-spacing: -10px;
     }
 
     .control{
-        top:calc(25% - 10px/2 + 74.5px);
-        left: 5%;
+        /* top:calc(25% - 10px/2 + 74.5px);
+        left: 15%; */
         font-size: 12px;
         line-height: 16px;
         text-align: center;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -28,10 +29,13 @@
                         <p>:</p>
                         <p id="seconds">00</p>
                     </div>
-                    <a href="#" class="control" id="control1">start</a>
-                    <a href="#" class="control" id="control2">pause</a>
-                    <a href="#" class="control" id="control3">restart</a>
-                    <svg class="progress-ring" height="339" width="339">
+                    <div class="status">
+                        <a href="#" class="control" id="control1">start</a>
+                        <a href="#" class="control" id="control2">pause</a>
+                        <a href="#" class="control" id="control3">restart</a>
+                    </div>
+                    <!-- <svg class="progress-ring" height="339" width="339"> -->
+                    <svg class="progress-ring" viewBox="0 0 339 339">
                         <circle
                             class="progress-ring-circle"
                             stroke-width="13.5"
