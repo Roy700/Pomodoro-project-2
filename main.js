@@ -62,7 +62,9 @@ circle.style.strokeDashoffset = circumference;
 
 function setProgress(percent) {
   const offset = circumference - (percent / 100) * circumference;
-  circle.style.strokeDashoffset = offset;
+  // let offset = (percent / 100) * circumference;
+  // console.log(offset);
+  circle.style.strokeDashoffset = offset;  /*-offset*/
 }
 
 
@@ -159,8 +161,8 @@ startBtn.addEventListener("click", () => {
   
     if (btn === "focus") {
       mins = +localStorage.getItem("focusTime");
-    }else if(btn = "shortBreak"){
-        mins = +localStorage.getItem("shortBreakTime");
+    }else if(btn === "shortBreak"){
+      mins = +localStorage.getItem("shortBreakTime");
     }else{
       mins = +localStorage.getItem("longBreakTime");
     }
@@ -182,7 +184,7 @@ startBtn.addEventListener("click", () => {
       perc = Math.ceil(((totalsecs - seconds) / totalsecs) * 100);
       setProgress(perc);
       seconds--;
-      initial = window.setTimeout("decremenT()", 1000);
+      initial = window.setTimeout("decremenT()", 500);
     } else {
       mins = 0;
       seconds = 0;
