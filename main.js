@@ -5,6 +5,7 @@ let pillNodes = document.querySelectorAll('.pill-panel p');
 const circle = document.querySelector(".progress-ring-circle");
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
+// let offset = (percent / 100) * circumference;
 
 const focusTimeInput = document.querySelector("#focusTime");
 const shortBreakTimeInput = document.querySelector("#shortBreakTime");
@@ -19,7 +20,7 @@ let font3 = document.querySelector(".font-selector3");
 let fonts = '';
 let color = "";
 let selectedBtn = null;
-let selectedFont = null;
+let selectedFont = font1;
 let root = document.querySelector(":root");
 
 const el = document.querySelector(".clock-circle");
@@ -33,27 +34,77 @@ const settingsIcon = document.querySelector(".settings-icon");
 
 // PILL NAVIGATION
 for(let i=0; i<pillNodes.length;i++){
-    pillNodes[i].addEventListener("click", function(){
+    pillNodes[i].addEventListener("click", ()=>{
         pill.querySelector(".active").classList.remove("active");
         pillNodes[i].classList.add("active");
         indicator.style.left= `calc(calc(calc(33% - 5px) * ${i}) + 2%)`;
     })
-    pillNodes[0].addEventListener("click", function(){
+    pillNodes[0].addEventListener("click", ()=>{
         localStorage.setItem("btn", "focus")
         // clearTimeout(initial);
         // setProgress(0);
     })
-    pillNodes[1].addEventListener("click", function(){
+    pillNodes[1].addEventListener("click", ()=>{
         localStorage.setItem("btn", "shortBreak");
         // clearTimeout(initial);
         // setProgress(0);
       })
-    pillNodes[2].addEventListener("click", function(){
+    pillNodes[2].addEventListener("click", ()=>{
         localStorage.setItem("btn", "LongBreak");
         // clearTimeout(initial);
         // setProgress(0);
     })
 }
+
+//SVG ARROWS
+
+const inputNumber1 = document.getElementById("focusTime");
+const inputNumber2 = document.getElementById("shortBreakTime");
+const inputNumber3 = document.getElementById("longBreakTime");
+// const inputNumber = document.querySelectorAll(".input-space");
+const arrowUp = document.createElement("div");
+arrowUp.classList.add("arrow-up");
+arrowUp.addEventListener("click", () => {
+    inputNumber1.stepUp();
+});
+inputNumber1.after(arrowUp);
+
+const arrowDown = document.createElement("div");
+arrowDown.classList.add("arrow-down");
+arrowDown.addEventListener("click", () => {
+    inputNumber1.stepDown();
+});
+inputNumber1.after(arrowDown);
+
+//2nd arrow
+const arrowUp2 = document.createElement("div");
+arrowUp2.classList.add("arrow-up2");
+arrowUp2.addEventListener("click", () => {
+    inputNumber2.stepUp();
+});
+inputNumber2.after(arrowUp2);
+
+const arrowDown2 = document.createElement("div");
+arrowDown2.classList.add("arrow-down2");
+arrowDown2.addEventListener("click", () => {
+    inputNumber2.stepDown();
+});
+inputNumber2.after(arrowDown2);
+
+//3rd arrow
+const arrowUp3 = document.createElement("div");
+arrowUp3.classList.add("arrow-up3");
+arrowUp3.addEventListener("click", () => {
+    inputNumber3.stepUp();
+});
+inputNumber3.after(arrowUp3);
+
+const arrowDown3 = document.createElement("div");
+arrowDown3.classList.add("arrow-down3");
+arrowDown3.addEventListener("click", () => {
+    inputNumber3.stepDown();
+});
+inputNumber3.after(arrowDown3);
 
 
 // PROGRESS
@@ -62,9 +113,9 @@ circle.style.strokeDashoffset = circumference;
 
 function setProgress(percent) {
   const offset = circumference - (percent / 100) * circumference;
-  // let offset = (percent / 100) * circumference;
+  //let&nocircumference
   // console.log(offset);
-  circle.style.strokeDashoffset = offset;  /*-offset*/
+  circle.style.strokeDashoffset = offset; 
 }
 
 
@@ -81,7 +132,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
     root.style.setProperty('--theme', color);
 });
 
-function selectFont(fon) {
+const selectFont = (fon) => {
   if (selectedFont) {
       selectedFont.classList.remove("highlighted");
   }
@@ -89,7 +140,7 @@ function selectFont(fon) {
   selectedFont.classList.add("highlighted");
 }
 
-function selectButton(btn) {
+const selectButton = (btn) => {
   if (selectedBtn) {
       selectedBtn.classList.remove("selected");
   }
@@ -176,7 +227,7 @@ startBtn.addEventListener("click", () => {
     paused = false;
   });
 
-  function decremenT() {
+  decremenT = () => {
     mindiv.textContent = Math.floor(seconds / 60);
     secdiv.textContent = seconds % 60 > 9 ? seconds % 60 : `0${seconds % 60}`;
   
@@ -184,7 +235,7 @@ startBtn.addEventListener("click", () => {
       perc = Math.ceil(((totalsecs - seconds) / totalsecs) * 100);
       setProgress(perc);
       seconds--;
-      initial = window.setTimeout("decremenT()", 500);
+      initial = window.setTimeout("decremenT()", 1000);
     } else {
       mins = 0;
       seconds = 0;
