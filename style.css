@@ -1,5 +1,5 @@
 * {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -71,10 +71,12 @@ input[type=number] {
     background-image: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSI3Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMxRTIxM0YiIHN0cm9rZS1vcGFjaXR5PSIuMjUiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEgMWw2IDQgNi00Ii8+PC9zdmc+");
 }
 
-
+/* html,body{
+    height: 100%;
+} */
 
 body{
-    margin: 0 auto;
+    margin: 0;
     background: #1E213F;
     padding: 0 0;
     height: 100vh;
@@ -86,6 +88,7 @@ body{
     left: 0px;
     right: 0px; */
     /* font-size: 1.6rem;*/
+    /* overflow: hidden; */
 }
 
 .container {
@@ -100,11 +103,14 @@ body{
     justify-content: center;
     align-items: center;
     position: relative;
+    
 }
 
 .img-heading{
-    margin-top: 2.375rem;
-    margin-bottom: 2.313rem;
+    margin-top: 0.8rem;
+    margin-bottom: 2.125rem;
+    /* width: 157px; */
+    width: 107px;
 }
 
 
@@ -209,16 +215,21 @@ h3{
 
 .font-section{
     display: flex;
-    /* justify-content: space-between; */
-    justify-content: center;
+    justify-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
     gap: 200px;
-    padding: 35px 0;
+    padding: 14px 0;
     border-bottom: 1px solid #E3E1E1;
 }
 
 /* .font-selector{
-      
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40px;
+    background-color: red;
+
 } */
 
 /* .outer{
@@ -231,6 +242,7 @@ h3{
 
 .font-btn{
     position: relative;
+    display: inline-block;
     padding:11px;
     margin: 11px;
     background: #EFF1FA;
@@ -263,6 +275,7 @@ h3{
     font-style: normal;
     font-weight: 700;
     font-size: 15px;
+    /* font-size: 20px; */
     text-align: center;
     /* display: flex;
     justify-content: center;
@@ -346,13 +359,14 @@ h3{
     background: #161932;
     text-align: center;
     align-items: center;
-    /* width: 20rem; */
-    width: 373px;
-    height: 63px;
+    /* width: 373px;
+    height: 63px; */
+    width: 303px;
+    height: 53px;
     margin-bottom: 2.188rem;
     /* margin-block: 47px; */
-    padding: 1rem;
-    border-radius: 10rem;
+    padding: .5rem;
+    border-radius: 31.5px;
 }
 
 .pill-panel p{
@@ -363,8 +377,10 @@ h3{
     z-index: 2;
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
-    line-height: 18px;
+    /* font-size: 14px;
+    line-height: 17px; */
+    font-size: 13px;
+    line-height: 16px;
     text-align: center;
     transition: all 300ms ease-in-out;
 }
@@ -383,7 +399,7 @@ h3{
     position: absolute;
     background: var(--theme);
     width: calc(33% - 1px);
-    height: 48px;
+    height: 40px;
     left: 2%;
     border-radius: 26.5px;
     transition: all 300ms ease-in-out;
@@ -393,8 +409,10 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25.625rem;
-    height: 25.625rem;
+    /* width: 25.625rem; 410  both
+    height: 25.625rem; */
+    width: 340px;
+    height: 340px;
     border-radius: 50%;
     background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
     box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
@@ -406,8 +424,10 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 22.875em;
-    height: 22.875em;;
+    /* width: 22.875em;
+    height: 22.875em; */
+    width: 90%;
+    height: 90%;
     border-radius: 50%;
     background: #161932;
 }
@@ -425,8 +445,10 @@ h3{
 
 .progress-ring{
     position: absolute;
-    width: 339px;
-    height: 339px;
+    /* width: 339px;
+    height: 339px; */
+    width: 285px;
+    height: 285px;
     top: 50%;
     left:50%;
     transform: translate(-50%, -50%);
@@ -447,7 +469,8 @@ h3{
 }
 
 .time p {
-    font-size: 100px;
+    font-size: 80px;
+    font-weight: 700;
     line-height: 132px;
     text-align: center;
     color: #D7E0FF;
@@ -459,9 +482,10 @@ h3{
     text-transform: uppercase;
     font-weight: 700;
     font-size: 16px;
-    line-height: 21px;
+    line-height: 20px;
     text-align: center;
-    letter-spacing: 15px;
+    /* letter-spacing: 15px; */
+    letter-spacing: 8px;
     cursor: pointer;
     margin-top: 10px;
     justify-self: flex-end; /*not working??*/
@@ -487,10 +511,13 @@ h3{
 }
 
 .setting{
-    /* margin-top: 0; */
-    margin-top: 3.938rem;
-    /* margin-bottom: 5px; */
-    margin-bottom: 2.5rem;
+    /* margin-top: 3.938rem;
+    margin-bottom: 2.5rem; */
+    margin-top: 2.938rem;
+    margin-left: -20px;
+    margin-bottom: 1.5rem;
+    width: 10px;
+    height: 10px;
 }
 
 .settings-icon{
@@ -521,29 +548,27 @@ button.selected .checkmark {
 
 @media(max-width: 768px){
     body{
-        height: 1024px;   
+        /* height: 1024px;    */
         margin: 0 auto;  
     }
 
     .container{
         /* align-items: center; */
-        
         min-height: 100vh;
     }
 
     .img-heading{
-        margin-top: 80px;
-        padding-top: 0;
+        /* margin-top: 80px; */
     }
 
     .pill-panel{
-        margin-top: 55px;
+        margin-top: 40px;
         margin-bottom: 109px;
     }
 
     .setting{
-        margin-top: 144px;
-        margin-bottom: 103px;
+        margin-top: 104px;
+        /* margin-bottom: 103px; */
     }
 
 }
@@ -617,13 +642,13 @@ button.selected .checkmark {
     }
 
     .img-heading{
-        margin-top: 32px;
+        margin-top: -42px;
         width: 118px;
         height: 30px;
     }
 
     .pill-panel{
-        margin-top: 45px;
+        margin-top: 25px;
         margin-bottom: 48px;
         width: 327px;
     }
@@ -780,21 +805,24 @@ button.selected .checkmark {
 
     .font-section{
         flex-direction: column;
+        align-items: center;
         max-height: 117px;
         /* justify-content: space-between; */
-        gap: 10px;
-        padding: 24px 0;
+        margin-top: 10px;
+        gap: 2px;
+        /* padding: 9px 0; */
     }
 
-    .font-selector{
-        margin-top: 18px;
-        margin-bottom: 24px;
-    }
+    /* .font-selector{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    } */
 
     .color-section{
         /* display: flex;
         justify-content: space-between;
         padding: 20px 0; */
+        align-items: center;
         flex-direction: column;
         max-height: 144px;
         gap: 12px;
